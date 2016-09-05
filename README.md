@@ -139,24 +139,26 @@ bot.on('message', async message => {
     await bot.wait(1000);
     
     // ---- send buttons (single card)
+    //make sure you import Buttons from facebook-messenger-bot
     buttons = new Buttons();
     buttons.add({text: 'Google', url: 'http://google.com'});
     buttons.add({text: 'Yahoo', url: 'http://yahoo.com'});
     buttons.add({text: 'Bing', url: 'http://bing.com'});
     out = new Elements();
     out.add({text: 'search engines', subtext: 'click to get redirected', buttons}); // add a card
-    await bot.send(to, out);
+    await bot.send(sender.id, out);
     
     await bot.wait(2000);
     
     // ---- send image + buttons (multiple cards)
+    //make sure you import Buttons from facebook-messenger-bot
     buttons = new Buttons();
     buttons.add({text: 'Google', url: 'http://google.com'});
     buttons.add({text: 'Yahoo', url: 'http://yahoo.com'});
     out = new Elements();
     out.add({image: 'http://google.com/logo.png', text: 'hey', buttons}); // first card
     out.add({image: 'http://yahoo.com/logo.png', text: 'hey', buttons}); // second card
-    await bot.send(to, out);
+    await bot.send(sender.id, out);
 });
 ```
 ### Handle Postbacks
@@ -166,14 +168,15 @@ bot.on('message', async message => {
         
     let out, buttons;
         
-    // ---- send buttons 
+    // ---- send buttons
+    //make sure you import Buttons from facebook-messenger-bot
     buttons = new Buttons();
     buttons.add({text: 'Google', data: 'google', event: 'search-engine'});
     buttons.add({text: 'Bing', data: 'bing', event: 'search-engine'});
     buttons.add({text: 'Yahoo', data: 'yahoo', event: 'search-engine'});
     out = new Elements();
     out.add({image: 'http://someimage.com', text: 'hey', buttons});
-    await bot.send(to, out);
+    await bot.send(sender.id, out);
     await sleep(2000);
 });
 
