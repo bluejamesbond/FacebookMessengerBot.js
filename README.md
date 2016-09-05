@@ -28,9 +28,36 @@ Internally, it uses [Promises to ensure compatibility with `async/await`](https:
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Install 
+Babel dependencies
+if you want to keep babel locally
+```
+npm i -D babel-cli babel-preset-es2015 babel-preset-stage-0 babel-plugin-array-includes babel-plugin-transform-runtime babel-plugin-syntax-async-functions babel-plugin-transform-object-rest-spread babel-plugin-syntax-class-properties babel-plugin-transform-async-to-module-method
+
+npm i -S bluebird
+```
+if you want to make babel global
+```
+npm i -g babel-cli babel-preset-es2015 babel-preset-stage-0 babel-plugin-array-includes babel-plugin-transform-runtime babel-plugin-syntax-async-functions babel-plugin-transform-object-rest-spread babel-plugin-syntax-class-properties babel-plugin-transform-async-to-module-method
+
+npm i -S bluebird
+```
+
+install the module
 ```
 npm install facebook-messenger-bot --save -E
 ```
+to run the code:
+if you have babel globally
+```
+babel-node yourbot.js
+```
+if you have babel locally
+add 
+```
+    "start": "babel-node app.js",
+```
+to your scripts argument in the package.json then start the app with npm start. 
+
 
 ## Example
 ```es6
