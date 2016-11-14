@@ -71,7 +71,6 @@ class Bot extends EventEmitter {
   }
 
   async setPersistentMenu(input) {
-
     if (!input) {
       const {body: {result}} = await fetch('https://graph.facebook.com/v2.6/me/thread_settings', {
         method: 'delete',
