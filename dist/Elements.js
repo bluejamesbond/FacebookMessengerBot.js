@@ -41,10 +41,10 @@ var Elements = function () {
   (0, _createClass3.default)(Elements, [{
     key: 'add',
     value: function add(_ref) {
-      var text = _ref.text;
-      var image = _ref.image;
-      var subtext = _ref.subtext;
-      var buttons = _ref.buttons;
+      var text = _ref.text,
+          image = _ref.image,
+          subtext = _ref.subtext,
+          buttons = _ref.buttons;
 
       if (buttons) {
         if (!(buttons instanceof _Buttons2.default)) {
