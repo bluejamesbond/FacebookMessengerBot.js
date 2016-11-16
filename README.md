@@ -221,9 +221,8 @@ bot.on('delivery', async (message, mids) => {
 })();
 ```
 
-### Set/Delete persisten menu
+### Set/Delete persistent menu
 ```es6
-
 // use postback buttons for the menu, other buttons are not supported by facebook
 menuButtons = new menuButtons();
 
