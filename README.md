@@ -149,6 +149,13 @@ bot.on('message', async message => {
 
     await bot.wait(2000);
 
+  	// ---- send list
+  	out = new Elements();
+    out.setListStyle('compact'); // or 'large'
+  	out.add({text: 'Item 1', subtext: 'Subtitle'}); // add list item
+  	out.add({text: 'Item 2', subtext: 'Subtitle'}); // add list item
+  	await bot.send(sender.id, out);
+
     // ---- send image + buttons (multiple cards)
     buttons = new Buttons();
     buttons.add({text: 'Google', url: 'http://google.com'});
