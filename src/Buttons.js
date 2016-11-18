@@ -3,12 +3,12 @@ class Buttons {
     this._buttons = [];
   }
 
-  add({text, data, url, event}) {
-    if (!data && !url && !event) {
+  add({text, data, url, event, share}) {
+    if (!data && !url && !event && !share) {
       throw Error('Must provide a url or data i.e. {data: null} or {url: \'https://facebook.com\'}');
     }
 
-    this._buttons.push({text: text || 'Button', event, data, url});
+    this._buttons.push({text: text || 'Button', event, data, url, share});
     return this;
   }
 
@@ -20,6 +20,8 @@ class Buttons {
       } else if (button.data != null) {
         const payload = JSON.stringify({data: button.data, event: button.event});
         buttons.push({type: 'postback', payload, title: button.text});
+      } else if (button.share) {
+        buttons.push({type: 'element_share'});
       }
     }
 
