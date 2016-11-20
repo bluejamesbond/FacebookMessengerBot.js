@@ -45,7 +45,8 @@ var Elements = function () {
       var text = _ref.text,
           image = _ref.image,
           subtext = _ref.subtext,
-          buttons = _ref.buttons;
+          buttons = _ref.buttons,
+          defaultAction = _ref.defaultAction;
 
       if (buttons) {
         if (!(buttons instanceof _Buttons2.default)) {
@@ -56,8 +57,11 @@ var Elements = function () {
           }
         }
       }
+      if (defaultAction) {
+        defaultAction.type = 'web_url';
+      }
 
-      this._elements.push({ text: text, image: image, subtext: subtext, buttons: buttons });
+      this._elements.push({ text: text, image: image, subtext: subtext, buttons: buttons, defaultAction: defaultAction });
       return this;
     }
   }, {
@@ -110,6 +114,7 @@ var Elements = function () {
               if (e.image) element.image_url = e.image;
               if (e.subtext) element.subtitle = e.subtext;
               if (e.buttons && e.buttons.length) element.buttons = e.buttons.toJSON();
+              if (e.defaultAction) element.default_action = e.defaultAction;
               elements.push(element);
             }
           } catch (err) {
@@ -144,6 +149,7 @@ var Elements = function () {
             _element.title = _e.text;
             if (_e.image) _element.image_url = _e.image;
             if (_e.subtext) _element.subtitle = _e.subtext;
+            if (_e.defaultAction) _element.default_action = _e.defaultAction;
             _element.buttons = _e.buttons.toJSON();
             return { attachment: { type: 'template', payload: { template_type: 'generic', elements: [_element] } } };
           } else if (_e.text && _e.buttons && _e.buttons.length) {

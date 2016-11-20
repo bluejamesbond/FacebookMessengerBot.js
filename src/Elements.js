@@ -8,7 +8,7 @@ class Elements {
     this._listStyle = null;
   }
 
-  add({text, image, subtext, buttons}) {
+  add({text, image, subtext, buttons, defaultAction}) {
     if (buttons) {
       if (!(buttons instanceof Buttons)) {
         if (Array.isArray(buttons)) {
@@ -18,8 +18,12 @@ class Elements {
         }
       }
     }
+    if (defaultAction) {
+      defaultAction.type = 'web_url';
+    }
 
-    this._elements.push({text, image, subtext, buttons});
+
+    this._elements.push({text, image, subtext, buttons, defaultAction});
     return this;
   }
 
@@ -63,6 +67,7 @@ class Elements {
           if (e.image) element.image_url = e.image;
           if (e.subtext) element.subtitle = e.subtext;
           if (e.buttons && e.buttons.length) element.buttons = e.buttons.toJSON();
+          if (e.defaultAction) element.default_action = e.defaultAction;
           elements.push(element);
         }
         if (this._listStyle) {
@@ -82,6 +87,7 @@ class Elements {
           element.title = e.text;
           if (e.image) element.image_url = e.image;
           if (e.subtext) element.subtitle = e.subtext;
+          if (e.defaultAction) element.default_action = e.defaultAction;
           element.buttons = e.buttons.toJSON();
           return {attachment: {type: 'template', payload: {template_type: 'generic', elements: [element]}}};
         } else if (e.text && e.buttons && e.buttons.length) {

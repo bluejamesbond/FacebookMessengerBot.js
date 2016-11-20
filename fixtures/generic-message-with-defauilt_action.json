@@ -1,0 +1,27 @@
+{
+  "attachment": {
+    "type": "template",
+    "payload": {
+      "template_type": "generic",
+      "elements": [
+        {
+          "title": "sup",
+          "image_url": "https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png",
+          "subtitle": "subtext",
+          "default_action": {
+            "text": "Wikipedia",
+            "ulr": "https://www.wikipedia.org",
+            "type": "web_url"
+          },
+          "buttons": [
+            {
+              "type": "web_url",
+              "url": "https://www.wikipedia.org",
+              "title": "Wikipedia"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
