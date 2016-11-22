@@ -17,7 +17,7 @@ describe('Elements', () => {
       subtext: 'subtext',
       image: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
       buttons: [{text: 'Wikipedia', url: 'https://www.wikipedia.org'}],
-      defaultAction: {text: 'Wikipedia', ulr: 'https://www.wikipedia.org'}
+      defaultAction: {text: 'Wikipedia', url: 'https://www.wikipedia.org'}
     });
 
     assert.deepEqual(simpleMessageWithDefaultAction, elements.toJSON());

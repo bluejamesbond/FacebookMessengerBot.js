@@ -10,7 +10,7 @@
           "subtitle": "subtext",
           "default_action": {
             "text": "Wikipedia",
-            "ulr": "https://www.wikipedia.org",
+            "url": "https://www.wikipedia.org",
             "type": "web_url"
           },
           "buttons": [

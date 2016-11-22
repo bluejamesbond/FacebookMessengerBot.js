@@ -146,7 +146,7 @@ bot.on('message', async message => {
     out = new Elements();
     out.add({text: 'search engines', subtext: 'click to get redirected', buttons}); // add a card
     await bot.send(to, out);
-    
+
     // ---- send share/call buttons
     buttons = new Buttons();
     buttons.add({text: 'Call us', phone: '+808 863718243'});
@@ -171,7 +171,7 @@ bot.on('message', async message => {
       text: 'wikipedia',
       image: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
       buttons: [{text: 'Wikipedia', url: 'https://www.wikipedia.org'}],
-      defaultAction: {text: 'Wikipedia', ulr: 'https://www.wikipedia.org'}
+      defaultAction: {text: 'Wikipedia', url: 'https://www.wikipedia.org'}
     });
     await bot.send(sender.id, out);
 

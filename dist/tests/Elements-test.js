@@ -30,7 +30,7 @@ describe('Elements', function () {
       subtext: 'subtext',
       image: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
       buttons: [{ text: 'Wikipedia', url: 'https://www.wikipedia.org' }],
-      defaultAction: { text: 'Wikipedia', ulr: 'https://www.wikipedia.org' }
+      defaultAction: { text: 'Wikipedia', url: 'https://www.wikipedia.org' }
     });
 
     _assert2.default.deepEqual(_genericMessageWithDefauilt_action2.default, elements.toJSON());
