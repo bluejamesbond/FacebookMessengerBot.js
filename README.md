@@ -156,6 +156,18 @@ bot.on('message', async message => {
   	out.add({text: 'Item 2', subtext: 'Subtitle'}); // add list item
   	await bot.send(sender.id, out);
 
+
+    // ---- add default action
+    out = new Elements();
+    out.add({
+      text: 'wikipedia',
+      image: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
+      buttons: [{text: 'Wikipedia', url: 'https://www.wikipedia.org'}],
+      defaultAction: {text: 'Wikipedia', ulr: 'https://www.wikipedia.org'}
+    });
+    await bot.send(sender.id, out);
+
+
     // ---- send image + buttons (multiple cards)
     buttons = new Buttons();
     buttons.add({text: 'Google', url: 'http://google.com'});
