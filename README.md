@@ -1,5 +1,5 @@
 # Facebook Messenger Bot
-[![](https://travis-ci.org/bluejamesbond/FacebookMessengerBot.js.svg?branch=master)](https://travis-ci.org/bluejamesbond/FacebookMessengerBot.js)  
+[![](https://travis-ci.org/bluejamesbond/FacebookMessengerBot.js.svg?branch=master)](https://travis-ci.org/bluejamesbond/FacebookMessengerBot.js)
 The purpose of this library is to offer a simple, light-weight Facebook Messenger Bot API for Node with ES6 support.
 Internally, it uses [Promises to ensure compatibility with `async/await`](https://github.com/bluejamesbond/FacebookMessengerBot.js/blob/master/.babelrc#L13).
 
@@ -146,7 +146,7 @@ bot.on('message', async message => {
     out = new Elements();
     out.add({text: 'search engines', subtext: 'click to get redirected', buttons}); // add a card
     await bot.send(to, out);
-    
+
     // ---- send share/call buttons
     buttons = new Buttons();
     buttons.add({text: 'Call us', phone: '+808 863718243'});
@@ -163,6 +163,18 @@ bot.on('message', async message => {
   	out.add({text: 'Item 1', subtext: 'Subtitle'}); // add list item
   	out.add({text: 'Item 2', subtext: 'Subtitle'}); // add list item
   	await bot.send(sender.id, out);
+
+
+    // ---- add default action
+    out = new Elements();
+    out.add({
+      text: 'wikipedia',
+      image: 'https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png',
+      buttons: [{text: 'Wikipedia', url: 'https://www.wikipedia.org'}],
+      defaultAction: {text: 'Wikipedia', url: 'https://www.wikipedia.org'}
+    });
+    await bot.send(sender.id, out);
+
 
     // ---- send image + buttons (multiple cards)
     buttons = new Buttons();
