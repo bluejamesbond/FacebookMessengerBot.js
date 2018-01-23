@@ -267,7 +267,7 @@ bot.on('delivery', async (message, mids) => {
 
   console.log(await bot.setPersistentMenu(menuButtons));
 
-  // console.log(await bot.setPersistentMenu(null)); // DELETE Persisten menu
+  // console.log(await bot.setPersistentMenu(null)); // DELETE Persistent menu
 })();
 
 ```
@@ -276,6 +276,7 @@ bot.on('delivery', async (message, mids) => {
 [Sender actions](https://developers.facebook.com/docs/messenger-platform/send-api-reference/sender-actions) allow you to mark messages as read, and set the typing indicator on or off.
 
 ```es6
+(async function () {
   // Show the typing indicator. to is a sender id.
   await Bot.startTyping(to);
 
